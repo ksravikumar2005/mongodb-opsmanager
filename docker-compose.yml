@@ -1,0 +1,30 @@
+version: '3'
+services:
+   opsmanager:
+     build: ./ops-manager
+     ports:
+       - 8080:8080
+       - 8081:8081
+     volumes:
+       - opsmanager_datadb:/data/db
+       - etc-mms:/etc/mongodb-mms
+       - opt-mms/opt/mongodb/mms
+     networks:
+       - opsmanager
+
+   opsmanagerdatabase:
+     image: mongo:latest
+     ports:
+       - 27017:27017
+     volumes:
+       - opsmanagerdatabase_datadb:/data/db
+     networks:
+       - opsmanager
+volumes:
+   opsmanager_datadb:
+   etc-mms:
+   opsmanagerdatabase_datadb:
+   opt-mms:
+networks:
+  opsmanager:
+
