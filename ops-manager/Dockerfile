@@ -1,6 +1,7 @@
 FROM ubuntu:16.04
 
-ENV OPS_MGR_VERSION=3.6.7.47243.20180606T1457Z-1
+#ENV OPS_MGR_VERSION=3.6.7.47243.20180606T1457Z-1
+ENV OPS_MGR_VERSION=4.0.3.50208.20181003T0835Z-1
 
 RUN apt-get update \
  && apt-get install -y wget vim curl libsasl2-2 libsnmp30 ca-certificates \
