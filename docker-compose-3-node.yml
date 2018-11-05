@@ -21,6 +21,7 @@ services:
        - 27017:27017
      volumes:
        - opsmanagerdatabase_datadb:/data/db
+       - ./certs:/certs
      networks:
        - opsmanager
    opsmanager-backup:
@@ -30,6 +31,7 @@ services:
        - 37017:27017
      volumes:
        - backupdatabase_datadb:/data/db
+       - ./certs:/certs
      networks:
        - opsmanager
    node1:
